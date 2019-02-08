@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+{% block body %}
+<section class="ptb-0">
+  <div class="mb-30 brdr-ash-1 opacty-5"></div>
+  <div class="container">
+    <a class="mt-10" href="index.html"><i class="mr-5 ion-ios-home"></i>Home<i class="mlr-10 ion-chevron-right"></i></a>
+    <a class="color-ash mt-10" href="{{url_for('add')}}">Add Post</a>
+  </div><!-- container -->
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-12 col-md-8">
+        <h3><em>Add a Blog Post</em></h3>
+        {% from "includes/_formhelpers.html" import render_field %}
+        <p class="mb-30 mr-100 mr-sm-0">Hi Admin, Add a New  Blog Post Below.</p>
+        <form class="form-block form-bold form-mb-20 form-h-35 form-brdr-b-grey pr-50 pr-sm-0" method="POST" enctype="multipart/form-data">
+          <div class="row">
+
+            <div class="col-sm-12">
+              <input type="file" name="image">
+            </div>
+            <div class="col-sm-6">
+              <div class="pos-relative">
+                {{render_field(form.title, class="form-control pr-20")}}
+              </div><!-- pos-relative -->
+            </div><!-- col-sm-6 -->
+            <div class="col-sm-6">
+              <div class="pos-relative">
+                {{render_field(form.author, class="form-control pr-20")}}
+
+              </div><!-- pos-relative -->
+
+            </div><!-- col-sm-6 -->
+
+
+            <div class="col-sm-12">
+              <div class="pos-relative pr-80">
+                    {{render_field(form.content, class=" mb-0")}}
+                    <button class="abs-br font-20 plr-15 btn-fill-primary" type="submit"><i class="ion-ios-paperplane"></i></button>
+              </div><!-- pos-relative -->
+            </div><!-- col-sm-6 -->
+
+          </div><!-- row -->
+        </form>
+      </div><!-- col-md-6 -->
+
+      <div class="col-sm-12 col-md-4">
+        <h3 class="mb-20 mt-sm-50"><b>INFORMATION</b></h3>
+
+        <ul class="font-11 list-relative list-li-pl-30 list-block list-li-mb-15">
+          <li><i class="abs-tl ion-ios-location"></i>599 Co Rd 771 Ohio City CO <br/>81237. United States</li>
+          <li><i class="abs-tl ion-android-mail"></i>Infor.deercreative@gmail.com</li>
+          <li><i class="abs-tl ion-android-call"></i>(+12)-345-678-910</li>
+        </ul>
+        <ul class="font-11  list-a-plr-10 list-a-plr-sm-5 list-a-ptb-15 list-a-ptb-sm-5">
+          <li><a class="pl-0" href="#"><i class="ion-social-linkedin"></i></a></li>
+          <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+          <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+          <li><a href="#"><i class="ion-social-google"></i></a></li>
+          <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+        </ul>
+
+      </div><!-- col-md-6 -->
+    </div><!-- row -->
+  </div><!-- container -->
+</section>
+{% endblock %}
